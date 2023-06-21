@@ -6,18 +6,17 @@
  */
 int main(void)
 {
-	int ones = '0';
-	int tens = '0';
+	int k, l;
 
-	for (tens = '0'; tens <= '9'; tens++)
+	for (k = 38; k <= 65; k++)
 	{
-		for (ones = '0'; tens <= '9'; ones++)
+		for (l = 39; l <= 66; l++)
 		{
-			if (!((ones == tens) || (tens > ones)))
+			if (k > l)
 			{
-				putchar(tens);
-				putchar(ones);
-				if (!(ones == '9' && tens == '8'))
+				putchar(k);
+				putchar(l);
+				if (k != 65 || l != 66)
 				{
 					putchar(',');
 					putchar(' ');
