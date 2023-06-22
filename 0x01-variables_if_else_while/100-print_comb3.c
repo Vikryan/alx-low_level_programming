@@ -1,37 +1,30 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 /**
- * main - printing different combinations of two numbers
- *
- * Return: Always 0
+ * main - Printing combinations of two digits
+ * Return: 0 (Success)
  */
 int main(void)
 {
-	int k = '0';
-	int l = '0';
+	int e, f;
 
-	while (k <= '9')
+	for (e = '0'; e < '9'; e++)
 	{
-		while (l <= '9')
+		for (f = f + 1; f <= '9'; f++)
 		{
-			if (!(k > l) || k == l)
-			{
-				putchar(k);
-				putchar(l);
-				if (k == '8' && l == '9')
-				{
-					putchar('\n');
-				}
-				else
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-			l++;
+		if (e != f)
+		{
+		putchar(e);
+		putchar(f);
+		if (e == '8' && f == '9')
+		continue;
+		putchar(',');
+		putchar(' ');
 		}
-		l = '0';
-		k++;
+		}
 	}
+	putchar('\n');
 	return (0);
 }
