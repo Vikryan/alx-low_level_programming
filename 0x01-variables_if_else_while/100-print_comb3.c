@@ -1,29 +1,37 @@
 #include <stdio.h>
+
 /**
- * main - Printing different combinations of two digits
+ * main - printing different combinations of two numbers
  *
  * Return: Always 0
  */
 int main(void)
 {
-	int k, l;
+	int k = '0';
+	int l = '0';
 
-	for (k = 38; k <= 65; k++)
+	while (k <= '9')
 	{
-		for (l = 39; l <= 66; l++)
+		while (l <= '9')
 		{
-			if (k > l)
+			if (!(k > l) || k == l)
 			{
 				putchar(k);
 				putchar(l);
-				if (k != 65 || l != 66)
+				if (k == '8' && l == '9')
+				{
+					putchar('\n');
+				}
+				else
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
+			l++;
 		}
+		l = '0';
+		k++;
 	}
-	putchar('\n');
 	return (0);
 }
