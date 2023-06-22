@@ -3,18 +3,32 @@
 /**
  * main - Printing different combinations of three digits
  *
- * Return: 0 (Success)
+ * Return: Always 0
  */
 int main(void)
 {
-	int k = '0';
-	int l = '0';
-	int m = '0';
+	int x, y, z;
 
-	for (m = '0'; m <= '9'; m++)
+	for (x = 48; x < 58; x++)
 	{
-		for (l = '0'; l <= '9'; l++)
+		for (y = 49; y < 58; y++)
 		{
-			for (k = '0'; k <= '9'; k++)
+			for (z = 50; z < 58; z++)
 			{
-				if (!((
+				if (z > y && y > x)
+				{
+					putchar(x);
+					putchar(y);
+					putchar(z);
+					if (x != 55 || y != 56)
+					{
+						putchar(' ');
+						putchar(' ');
+					}
+				}
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
+}
