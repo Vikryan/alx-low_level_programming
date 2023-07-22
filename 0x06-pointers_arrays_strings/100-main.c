@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.>
+#include <stdio.h>
 
 /**
  * main - check the code
@@ -14,10 +14,10 @@ int main(void)
 	p = rot13(s);
 	printf("%s", p);
 	printf("------------------------------------\n");
-	printf("%s," s);
+	printf("%s", s);
 	printf("------------------------------------\n");
 	p = rot13(s);
-	printf("s", p);
+	printf("%s", p);
 	printf("------------------------------------\n");
 	printf("%s", s);
 	printf("------------------------------------\n");
