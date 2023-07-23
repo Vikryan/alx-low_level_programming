@@ -1,17 +1,42 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_buffer - prints a buffer
+ * @b: the buffer
+ * @size: buffer size
+ * Return: nothing
  */
-int main(void)
+void print_buffer(char *b, int size)
 {
-	char buffer[] = "This is a string!\0And this is the rest of the #buffer :)\1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x20\x21\x34\x56#pointersarefun #infernumisfun\n";
+	int m, n, o;
 
-	printf("%s\n", buffer);
-	printf("---------------------------------\n");
-	print_buffer(buffer, sizeof(buffer));
-	return (0);
+	if (size <= 0)
+		printf("\n");
+	else
+	{
+		for (m = 0; m < size; m += 10)
+		{
+			printf("%.8x:", m);
+			for (n = m; n < m + 10; n++)
+			{
+				if (n % 2 == 0)
+					printf(" ");
+				if (n < size)
+					printf("%.2x", *(b + n));
+				else
+					printf("  ");
+			}
+			printf(" ");
+			for (o = m; o < m + 10; o++)
+			{
+				if (o >= size)
+					break;
+				if (*(b + o) < 32 || *(b + o) > 126)
+					printf("%c", '.');
+				else
+					printf("%c", *(b + o));
+			}
+			printf("\n");
+		}
+	}
 }
