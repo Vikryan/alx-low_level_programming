@@ -91,6 +91,8 @@ int get_digit(char c)
  *
  * Description: If the mult has a non-digit number,
  * exit the function with a status of 98
+ *
+ * Return: pointer to string
  */
 void get_prod(char *prod, char *mult, int digit, int zeroes)
 {
@@ -136,6 +138,7 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
  * @final_prod: buffer storing final product
  * @next_prod: the next product
  * @next_len: length of next product
+ * Return: pointer to string
  */
 void add_nums(char *final_prod, char *next_prod, int next_len)
 {
